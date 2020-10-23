@@ -42,8 +42,6 @@
     
     NSError* audioSessionError = nil;
     
-    // Activate the audio session
-    [self.audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:&audioSessionError];
     
     if (audioSessionError != nil) {
         [self sendResult:@{@"code": @"audio", @"message": [audioSessionError localizedDescription]} :nil :nil :nil];
